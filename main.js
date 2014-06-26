@@ -1,14 +1,14 @@
-// var nameVictim = [];
-// var phoneNumVictim = [];
-// var streetVictim = [];
+var nameVictim = [];
+var phoneNumVictim = [];
+var streetVictim = [];
 
-// var nameVolunteer = [];
-// var phoneNumVolunteer = [];
-// var streetVolunteer = [];
-// // var arrayVictim = [];
-// // var arrayVolunteer = [];
-// // // var victim = {};
-// // var volunteer = {};
+var nameVolunteer = [];
+var phoneNumVolunteer = [];
+var streetVolunteer = [];
+var arrayVictim = [];
+var arrayVolunteer = [];
+var victim = {};
+var volunteer = {};
 
 
 // // var numVictim = prompt("how many disaster victims you wish to enter?");
@@ -67,11 +67,27 @@
 
 // }
 
+
 $(".button-victim").on('click', function(){
-	$(".victim-info").show();
+	$(".victim").show();
 });
 $(".button-volunteer").on('click', function(){
-	$(".volunteer-info").show();
+	$(".volunteer").show();
+});
+
+$(".submit").on('click', function(){
+	  var identity = $(this).closest(".person").data('identity');
+	  if (identity === 'victim'){
+	    nameVictim.push($(".name-victim").val());
+	    phoneNumVictim.push($(".phoneNum-victim").val());
+	    streetVictim.push($(".street-victim").val());
+	  }
+	  else{
+	    nameVolunteer.push($(".name-volunteer").val());
+	    phoneNumVolunteer.push($(".phoneNum-volunteer").val());
+	    streetVolunteer.push($(".street-volunteer").val());
+	  }
+	  // $('input').val('');
 });
 
 
